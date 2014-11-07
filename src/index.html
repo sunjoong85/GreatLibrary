@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Great Library Project</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <script src="lib/angularjs/angular.custom.js"></script>
+    <script src="angular-pilot.templates.js"></script>
+    <script src="angular-pilot.js"></script>
+
+
+    <!--
+      <link rel="stylesheet" href="asset/lib/bootstrap/css/bootstrap.css">
+    <script src="asset/lib/angularjs/angular.js"></script>
+    <script src="asset/lib/angularjs/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/shared/layout/header.js"></script>
+    <script src="app/component/login/login.js"></script>
+    <script src="app/component/signup/signup.js"></script>
+    <script src="app/component/tour/tour.js"></script>
+-->
+
+</head>
+<body>
+
+<!-- Add Header Navigator  ng-controller="HeaderController"-->
+<div>
+    <div ng-include='"shared/layout/header.tpl.html"'></div>
+</div>
+
+
+<!-- Add Sub Header-->
+
+<!-- Add Content it changes when route changes-->
+<section>
+    <div ng-view></div>
+</section>
+
+
+</body>
+</html>
