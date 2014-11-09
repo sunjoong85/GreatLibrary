@@ -13,7 +13,7 @@ angular.module('component.login.login', ['ngRoute'])
         console.log("login controller");
 
         $scope.login = function(user) {
-            alert.log(user.email + " logined");
+            alert(user.email + " logined");
         }
 }])
 
