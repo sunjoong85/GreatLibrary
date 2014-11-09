@@ -6,7 +6,11 @@
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/pilot.css">
     <script src="lib/angularjs/angular.custom.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
     <script src="angular-pilot.templates.js"></script>
     <script src="angular-pilot.js"></script>
 
@@ -23,12 +27,12 @@
 -->
 
 </head>
-<body>
+<body class="container">
 
-<!-- Add Header Navigator  ng-controller="HeaderController"-->
-<div>
-    <div ng-include='"shared/layout/header.tpl.html"'></div>
-</div>
+<!-- Add Header Navigator  -->
+<nav>
+    <div ng-include=' "component/layout/header.tpl.html" '></div>
+</nav>
 
 
 <!-- Add Sub Header-->
