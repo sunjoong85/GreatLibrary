@@ -1,0 +1,35 @@
+{
+  "name": "GrateLibraryProject",
+  "version": "1.0.0",
+  "description": "QnA for korean programmer",
+  "authors": [
+    "COM's"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components/",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "underscore": "~1.7.0",
+    // []1,2,3]   for(i =0; i<array.length;i++){println array[i]}); 
+    // _.each(array, function(a) {print a});
+    "momentjs": "~2.8.3",  // js Date formatter & parser
+
+    "jquery": "~2.1.1",  
+    // Web Browser -> 1) HTML convert DOM 2) Display DOM 3) JS execution  
+// W3C DOM API                                  window.getElementById("id").setAttribute("href", "")
+// jQuery -> DOM Manupulation. CSS Selector.    $("#id").attr("href","")  $("table .name td.first").val("First name");
+ 
+
+    "angular": "~1.3.1",
+    "angular-route": "~1.3.1",
+    "angular-sanitize": "~1.3.1",
+    "angular-mocks": "~1.3.1",
+    "restangular": "~1.4.0"
+  }
+}
