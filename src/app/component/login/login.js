@@ -9,6 +9,13 @@ angular.module('component.login.login', ['ngRoute'])
   });
 }])
 
-.controller('LoginController', [function() {
-    console.log("login controller");
-}]);
+.controller('LoginController', ["$scope", function($scope) {
+        console.log("login controller");
+
+        $scope.login = function(user) {
+            alert.log(user.email + " logined");
+        }
+}])
+
+.factory('LoginService', function() {
+})

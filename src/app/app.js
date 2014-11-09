@@ -26,11 +26,14 @@ angular.module('app',
      [
          'ngRoute',
          'app.templates',
-         'component.login.login',
-         'component.signup.signup',
-         'component.tour.tour'
+         'ui.bootstrap',
+         'component.module'
      ])
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+        $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false});
+
         $routeProvider.otherwise({redirectTo: ''});
     }]);
 
