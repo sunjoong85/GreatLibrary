@@ -10,6 +10,7 @@ module.exports = function(grunt) {
 		 
 	// Default tasks.
 	grunt.registerTask('default', [ 'clean', 'concat', 'html2js', 'copy']);
+    grunt.registerTask('bower', [])
 	grunt.registerTask('release', ['']);
 
 	grunt.initConfig({
@@ -33,7 +34,7 @@ module.exports = function(grunt) {
 				src: '<%=src.js%>',
 				dest: '<%=distDir%>/<%=pkg.name%>.js'
 			},
-			angularjs: { 
+			angularjs: {
 				src: [
 					'<%=baseDir%>/asset/lib/angularjs/angular.js',
 					'<%=baseDir%>/asset/lib/angularjs/angular-route.js'
@@ -70,48 +71,61 @@ module.exports = function(grunt) {
 		},
 
 		copy: {
-			asset: {
-				files: [
-					{
-						dest: '<%=distDir%>/image',
-						src:['**/*'],
-						cwd: '<%=baseDir%>/asset/image',
-						expand: true
-					},
-                    {
-                        dest: '<%=distDir%>/font',
-                        src: ['**/*'],
-                        cwd: '<%=baseDir%>/asset/font',
-                        expand: true
-                    }
-				]
-			},
-            bootstrap : {
-                files : [
-                    {
-                        dest: '<%=distDir%>/font',
-                        src: ['*.*'],
-                        cwd: '<%=baseDir%>/asset/lib/bootstrap/fonts',
-                        expand: true
-                    },
-                    {
-                        dest: '<%=distDir%>/css',
-                        src: ['*.*'],
-                        cwd: '<%=baseDir%>/asset/lib/bootstrap/css',
-                        expand: true
-                    }
-                ]
-            },
-			index: {
-				files: [
-					{
-	    	        	dest: '<%=distDir%>/',
-	        	        src: ['index.html'], 
-	    	        	cwd: '<%=baseDir%>/',
-	    	        	expand: true
-	    	        }
-				]
-			}
+                asset: {
+                    files: [
+                        {
+                            dest: '<%=distDir%>/image',
+                            src:['**/*'],
+                            cwd: '<%=baseDir%>/asset/image',
+                            expand: true
+                        },
+                        {
+                            dest: '<%=distDir%>/font',
+                            src: ['**/*'],
+                            cwd: '<%=baseDir%>/asset/font',
+                            expand: true
+                        },
+                        {
+                            dest: '<%=distDir%>/css',
+                            src: ['**/*'],
+                            cwd: '<%=baseDir%>/asset/css',
+                            expand: true
+                        },
+                        {
+                            dest: '<%=distDir%>/lib',
+                            src: ['angular-bootstrap/*.js'],
+                            cwd: '<%=baseDir%>/asset/lib',
+                            expand: true
+                        }
+                    ]
+                },
+                bootstrap : {
+                    files : [
+                        {
+                            dest: '<%=distDir%>/font',
+                            src: ['*.*'],
+                            cwd: '<%=baseDir%>/asset/lib/bootstrap/fonts',
+                            expand: true
+                        },
+                        {
+                            dest: '<%=distDir%>/css',
+                            src: ['*.*'],
+                            cwd: '<%=baseDir%>/asset/lib/bootstrap/css',
+                            expand: true
+                        }
+                    ]
+                },
+                index: {
+                    files: [
+                        {
+                            dest: '<%=distDir%>/',
+                            src: ['index.html'],
+                            cwd: '<%=baseDir%>/',
+                            expand: true
+                        }
+                    ]
+                }
+
 		},
 		less: {
 			default: {

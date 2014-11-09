@@ -1,15 +1,13 @@
 {
-  "name": "angular-seed",
+  "name": "angular-pilot",
   "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "version": "0.0.1",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "1.3.x",
-    "angular-route": "1.3.x",
-    "angular-loader": "1.3.x",
-    "angular-mocks": "~1.3.x",
-    "html5-boilerplate": "~4.3.0"
+    "angularjs": "~1.3.2",
+    "angular-bootstrap": "~0.11.2",
+    "bootstrap": "~3.3.0",
+    "angular-route": "~1.3.2"
   }
 }
