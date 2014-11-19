@@ -1,0 +1,25 @@
+<div class='navbar navbar-default navbar-static-top' role='navigation' ng-controller='HeaderController'>
+
+    <div class='container'></div>
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+                <span class='sr-only'>Toggle navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+            <a class='navbar-brand' href='#'>Great Library</a>
+        </div>
+        <div class='navbar-collapse collapse'>
+            <ul class='nav navbar-nav'>
+                <li ng-class='{ active: isActive("") }'><a href='/'>Home</a></li>
+            </ul>
+            <ul class='nav navbar-nav navbar-right'>
+                <li ng-class='{ active: isActive("/signup") }'><a href='signup'>Sign Up</a></li>
+                <li ng-class='{ active: isActive("/login") }'><a href='login'>Login</a></li>
+                <li ng-class='{ active: isActive("/tour") }'><a href='tour'>Tour</a></li>
+            </ul>
+        </div>
+    </div>
+        <!--/.nav-collapse -->
+</div>

@@ -1,0 +1,18 @@
+<div ng-controller='LoginController'>
+
+    <div class='row'>
+        <div class='form-group col-lg-3'>
+            <label for='email'>Email</label>
+            <input type='text' class='form-control' id='email' placeholder='Enter Email' ng-model='user.email'>
+        </div>
+    </div>
+
+     <div class='row'>
+        <div class='form-group col-lg-3'>
+            <label for='password'>Password</label>
+            <input type='password' class='form-control' id='password' placeholder='Password' ng-model='user.password'>
+        </div>
+    </div>
+
+    <a class='btn btn-default' ng-click='login(user)'>Login</a>
+</div>
