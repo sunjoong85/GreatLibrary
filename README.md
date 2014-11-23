@@ -11,7 +11,9 @@ npm install -g grunt-cli
 
 3. 다음 실행
   project home > npm install
+
   project home / client > npm install
+
   project home / server > npm install
 
 
