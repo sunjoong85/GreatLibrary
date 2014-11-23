@@ -8,8 +8,7 @@ Angular Pilot Project
 npm install -g grunt
 npm install -g grunt-cli
 
-
-3. 다음 실행
+3. 프로젝트 최초 클론 후 다음 실행
 
   project home > npm install
 
@@ -17,10 +16,14 @@ npm install -g grunt-cli
 
   project home / server > npm install
 
+4. npm install 후 빌드하기
+  project home > grunt
+
 
 # 2. 개발시 다음 실행
     2.1. Auto Build if client files change
          project home > grunt monitor
+         
     2.2. Run Server
          project home / server > nodemon server
 
