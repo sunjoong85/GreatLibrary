@@ -16,9 +16,10 @@ npm install -g grunt-cli
 
 
 # 2. 개발시 다음 실행
-
-  project home > grunt monitor
-  project home / serve > nodemon server
+    2.1. Auto Build if client files change
+         project home > grunt monitor
+    2.2. Run Server
+         project home / server > nodemon server
 
 
 # 3.참고자료
