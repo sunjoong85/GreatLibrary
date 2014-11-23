@@ -18,4 +18,5 @@ angular.module('component.login.login', ['ngRoute'])
 }])
 
 .factory('LoginService', function() {
+        console.log("service");
 })

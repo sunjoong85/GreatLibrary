@@ -33,7 +33,7 @@ angular.module('app',
         $locationProvider.html5Mode({
                 enabled: true,
                 requireBase: false});
-
+    console.log("app.js start");
         $routeProvider.otherwise({redirectTo: ''});
     }]);
 
