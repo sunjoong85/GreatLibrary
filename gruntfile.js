@@ -7,6 +7,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-nodemon');
 
+    grunt.registerTask('default', ['clean' , 'hub:client']);
     grunt.registerTask('client', ['hub:client']);
     grunt.registerTask('monitor', ['concurrent:watch']);
 
@@ -16,7 +17,7 @@ module.exports = function(grunt) {
                 force: true
             },
             dist: {
-                src: ["dist/*"]
+                src: ["server/resources/*"]
             }
         },
         hub: {
