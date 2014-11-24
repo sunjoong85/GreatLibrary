@@ -7,7 +7,7 @@ var app = express()
 app.use(express.static(__dirname + '/resources'));
 
 app.get('/', function (req, res) {
-    res.redirect('dist/index.html');
+    res.redirect('index.html');
 });
 
 var server = app.listen(3000, function () {
