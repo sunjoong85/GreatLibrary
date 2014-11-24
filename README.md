@@ -21,11 +21,13 @@ npm install -g grunt-cli
 
 
 # 2. 개발시 다음 실행
-  1. Auto Build if client files change
-         project home > grunt monitor
+  1. Client 파일이 변경되면 자동 빌드. Client 파일이 빌드되면, 빌드된 파일을 server/resources 에 복사한다.
+     
+     project home > grunt monitor
          
-  2. Run Server
-         project home / server > nodemon server
+  2. 서버 실행
+  
+    project home / server > nodemon server
 
 
 # 3.참고자료
