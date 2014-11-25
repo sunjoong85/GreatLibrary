@@ -4,11 +4,11 @@ Angular Pilot Project
   * node   :  nodejs.org 에서 node 설치
   * grunt  :  npm install -g grunt-cli
 
-
-2. 프로젝트 최초 클론 후 다음 실행
+2. 프로젝트 최초 클론 후 다음 실행 
+  (package.json 에 정의된 node module을 설치함)
   * GreatLibrary> npm install
 
-4. npm install 후 빌드하기
+4. 프로젝트 빌드
   * GreatLibrary> grunt
 
 # 2. 개발시 다음 실행
