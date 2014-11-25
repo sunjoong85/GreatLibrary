@@ -25,8 +25,9 @@ Angular Pilot Project
     
     (nodemon server/server.js 를 실행시킴)
  
-  3. monitor , 
-
+  3. monitor , nodemon task 동시 실행
+    * GreatLibrary> grunt dev
+   
 # 3.참고자료
 
 1. Build시 특정 HTML 치환 : https://www.npmjs.org/package/grunt-processhtml
