@@ -6,8 +6,20 @@ var app = express()
 
 app.use(express.static(__dirname + '/resources'));
 
+
 app.get('/', function (req, res) {
-    res.redirect('index.html');
+    console.log("/")
+    res.redirect('/index.html');
+});
+
+app.post('/login', function (req, res) {
+    console.log('login');
+
+    var result = {
+        success : "login sucess"
+    }
+
+    return   res.send(JSON.stringify(result));
 });
 
 var server = app.listen(3000, function () {

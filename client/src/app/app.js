@@ -30,10 +30,15 @@ angular.module('app',
          'component.module'
      ])
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+
+        console.log("app start");
+
         $locationProvider.html5Mode({
                 enabled: true,
                 requireBase: false});
-    console.log("app.js start");
+
         $routeProvider.otherwise({redirectTo: ''});
+
+        window.context = 'http://localhost:3000';
     }]);
 
