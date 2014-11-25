@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-    process.chdir('..');
+
+    grunt.file.setBase('../');
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -8,16 +9,18 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-html2js');
-		 
+
+
 	// Default tasks.
 	grunt.registerTask('default', [ 'clean', 'concat', 'html2js', 'copy']);
     grunt.registerTask('bower', [])
 	grunt.registerTask('release', ['']);
 
+
 	grunt.initConfig({
 		pkg : grunt.file.readJSON('package.json'),
-		baseDir: 'src', 
-		distDir: 'dist',
+		baseDir: 'client/src',
+		distDir: 'client/dist',
 		src: {
 			js: ['<%=baseDir%>/app/**/*.js'],
 			css:['<%=baseDir%>/app/**/*.css', '<%=baseDir%>/asset/**/*.css'],

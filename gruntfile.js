@@ -7,9 +7,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-nodemon');
 
-    grunt.registerTask('default', ['clean' , 'hub:client']);
+    grunt.registerTask('default', ['clean' , 'hub:client', 'copy:client']);
     grunt.registerTask('client', ['hub:client']);
+
     grunt.registerTask('monitor', ['concurrent:watch']);
+    grunt.registerTask('dev', ['concurrent:dev']);
 
     grunt.initConfig({
         clean: {
@@ -65,6 +67,13 @@ module.exports = function(grunt) {
             watch : {
                 tasks: ['hub:clientWatch', 'watch'],
                 options: {
+                    logConcurrentOutput: true
+                }
+            },
+
+            dev : {
+                tasks : ['hub:clientWatch', 'watch' , 'nodemon'],
+                options : {
                     logConcurrentOutput: true
                 }
             }
