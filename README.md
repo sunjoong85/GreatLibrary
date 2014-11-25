@@ -12,14 +12,20 @@ Angular Pilot Project
   * GreatLibrary> grunt
 
 # 2. 개발시 다음 실행
-  1. Client 파일이 변경되면 자동 빌드. Client 파일이 빌드되면, 빌드된 파일을 server/resources 에 복사한다.
+  1. Client 파일이 변경되면 자동 빌드
 
     *  GreatLibrary> grunt monitor
+    
+    (grunt-watch 를 실행. Client 파일이 빌드되면, 빌드된 파일을 server/resources 에 복사한다.)
 
   2. 서버 실행
   
     * GreatLibrary> nodemon server/server
-
+    * 또는 GreatLibrary>  grunt nodemon   
+    
+    (nodemon server/server.js 를 실행시킴)
+ 
+  3. monitor , 
 
 # 3.참고자료
 
