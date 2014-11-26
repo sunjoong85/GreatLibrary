@@ -31,3 +31,5 @@ Angular Pilot Project
 # 3.참고자료
 
 1. Build시 특정 HTML 치환 : https://www.npmjs.org/package/grunt-processhtml
+
+2. Bootstrap3 테마 추가: client/theme/index.html 또는 client/theme/Documentation/index.html 참조
