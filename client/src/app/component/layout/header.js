@@ -1,6 +1,3 @@
-/**
- * Created by SDS on 2014-11-03.
- */
 angular.module('component.layout.header',[])
 .controller('HeaderController', ['$scope', '$location', function($scope, $location) {
       /*  $scope.templates = {};

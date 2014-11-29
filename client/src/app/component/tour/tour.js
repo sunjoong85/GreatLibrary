@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('component.tour.tour', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {

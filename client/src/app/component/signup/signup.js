@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('component.signup.signup', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {

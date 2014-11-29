@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('component.login.login', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {

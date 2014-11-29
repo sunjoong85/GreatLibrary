@@ -4,8 +4,6 @@
  * @author sunjoong85@gmail.com
  *
  */
-'use strict';
-
 angular.module('component.module',
     [
         'component.login.login',
