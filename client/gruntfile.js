@@ -35,7 +35,8 @@ module.exports = function(grunt) {
         //여러개의 파일을 하나로 합침
 		concat : {
             default : {
-				src: '<%=src.js%>',
+				src: ['<%=src.js%>',
+                      '!**/*_test.js'],
 				dest: '<%=distDir%>/<%=pkg.name%>.js'
 			},
 			angularjs: {
@@ -159,7 +160,7 @@ module.exports = function(grunt) {
 				tasks: ['copy:index']
 			},
 			configFiles: {
-    			files: ['gruntfile.js'],
+    			files: ['client/gruntfile.js'],
     			options: {
       				reload: true
     			}
