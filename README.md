@@ -20,7 +20,7 @@ npm install -g karma-cli
      GreatLibrary> npm install
 
 ## 4. 프로젝트 빌드
-  * 프로젝트를 빌드하여 client/dist 폴더에 복사한다.
+  *  client/dist 폴더에서 빌드된 파일을 확인할 수 있다.
   
     GreatLibrary> grunt
 
