@@ -9,7 +9,7 @@ angular.module('component.login.login', ['ngRoute'])
   });
 }])
 
-.controller('LoginController', ["$scope", 'loginService', function($scope, loginService) {
+.controller('LoginController', ["$scope", 'LoginService', function($scope, loginService) {
         console.log("loginController");
 
         $scope.login = function(user) {
@@ -18,7 +18,7 @@ angular.module('component.login.login', ['ngRoute'])
         }
 }])
 
-.factory('loginService', ['$http', function($http) {
+.factory('LoginService', ['$http', function($http) {
         console.log("loginService");
 
         var login = function(id , password) {
