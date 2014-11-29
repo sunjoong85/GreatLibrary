@@ -19,7 +19,8 @@ module.exports = function(grunt) {
                 force: true
             },
             dist: {
-                src: ["server/resources/*"]
+                src: ['server/resources/*',
+                      'client/dist/*']
             }
         },
         hub: {
