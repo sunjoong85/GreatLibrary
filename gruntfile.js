@@ -6,12 +6,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-nodemon');
+    grunt.loadNpmTasks('grunt-exec');
 
     grunt.registerTask('default', ['clean' , 'hub:client', 'copy:client']);
     grunt.registerTask('client', ['hub:client']);
-
     grunt.registerTask('monitor', ['concurrent:watch']);
+    grunt.registerTask('server', ['exec:server']);
     grunt.registerTask('dev', ['concurrent:dev']);
+
 
     grunt.initConfig({
         clean: {
@@ -58,9 +60,19 @@ module.exports = function(grunt) {
             }
         },
 
+        //buggy
         nodemon: {
             dev: {
-                script: 'server/server.js'
+                script: 'server/server.js',
+                ignore: ['resources/**/*']  //grunt nodemon 0.3.0 에서 동작하지 않는 버그.
+            }
+        },
+
+        exec : {
+            server: {
+               cmd : function() {
+                   return "nodemon --ignore *.png --ignore *.css server/server.js"
+               }
             }
         },
 
@@ -73,7 +85,7 @@ module.exports = function(grunt) {
             },
 
             dev : {
-                tasks : ['hub:clientWatch', 'watch' , 'nodemon'],
+                tasks : ['hub:clientWatch', 'watch' , 'exec:server'],
                 options : {
                     logConcurrentOutput: true
                 }
