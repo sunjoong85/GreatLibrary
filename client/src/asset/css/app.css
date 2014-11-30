@@ -2570,7 +2570,7 @@ blockquote.hero.hero-default small {
   text-align: right;
   text-shadow: none;
   position: absolute;
-  filter: Alpha(opacity = 100); /*For IE*/
+  /*filter: Alpha(opacity = 100); *//*For IE*/
 }
 
 .testimonials .carousel-control.left {

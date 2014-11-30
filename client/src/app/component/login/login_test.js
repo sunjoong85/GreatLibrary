@@ -1,7 +1,7 @@
 'use strict';
 
 describe('component.login.login module', function() {
-
+jne
     console.log("i'm jasmine")
 //    beforeEach(module('component.login.login'));
 //
