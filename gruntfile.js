@@ -71,7 +71,7 @@ module.exports = function(grunt) {
         exec : {
             server: {
                cmd : function() {
-                   return "nodemon --ignore *.png --ignore *.css server/server.js"
+                   return "nodemon --ignore *.png --ignore *.jpg --ignore *.css server/server.js"
                }
             }
         },
