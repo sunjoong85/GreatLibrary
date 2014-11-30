@@ -10,7 +10,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-html2js');
 
-
 	// Default tasks.
 	grunt.registerTask('default', [ 'clean', 'concat', 'html2js', 'copy']);
     grunt.registerTask('bower', [])
@@ -22,21 +21,20 @@ module.exports = function(grunt) {
 		baseDir: 'client/src',
 		distDir: 'client/dist',
 		src: {
-			js: ['<%=baseDir%>/app/**/*.js'],
-			css:['<%=baseDir%>/app/**/*.css', '<%=baseDir%>/asset/**/*.css'],
-			images:['<%=baseDir%>/asset/images/*.*'],
-			font:['<%=baseDir%>/asset/font/*.*'],
+			js: ['<%=baseDir%>/app/**/*.js', '!<%=baseDir%>/app/**/*_test.js'],
+			css:['<%=baseDir%>/asset/css/**/*.css'],
+			img:['<%=baseDir%>/asset/img/**/*.*'],
+			font:['<%=baseDir%>/asset/font/**/*.*'],
 			tpl: ['<%=baseDir%>/app/**/*.tpl.html'],
 			json: ['<%=baseDir%>/app/**/*.json']
 		},
 
-        clean: ['<%= distDir %>'],
+        clean: ['<%=distDir%>'],
 
         //여러개의 파일을 하나로 합침
 		concat : {
             default : {
-				src: ['<%=src.js%>',
-                      '!**/*_test.js'],
+				src: ['<%=src.js%>'],
 				dest: '<%=distDir%>/<%=pkg.name%>.js'
 			},
 			angularjs: {
@@ -69,37 +67,39 @@ module.exports = function(grunt) {
 			        	return moduleName; 
 			        }
 		        },
-				src: ['<%= src.tpl%>', '<%= src.json%>'],
+				src: ['<%=src.tpl%>', '<%=src.json%>'],
 		        dest: '<%=distDir%>/<%=pkg.name%>.templates.js',
 		        module: 'app.templates'
 			}
 		},
 
 		copy: {
-                asset: {
-                    files: [
+                css : {
+                    files : [
                         {
-                            dest: '<%=distDir%>/image',
-                            src:['**/*'],
-                            cwd: '<%=baseDir%>/asset/image',
+                            dest: '<%=distDir%>/css',
+                            src: ['**/*.css', '!**/*.min.css' , '!**/*.map.css'],
+                            cwd: '<%=baseDir%>/asset/css',
                             expand: true
-                        },
+                        }
+                    ]
+                },
+                img : {
+                    files : [
+                        {
+                            dest: '<%=distDir%>/img',
+                            src:['**/*'],
+                            cwd: '<%=baseDir%>/asset/img',
+                            expand: true
+                        }
+                    ]
+                },
+                font : {
+                    files : [
                         {
                             dest: '<%=distDir%>/font',
                             src: ['**/*'],
                             cwd: '<%=baseDir%>/asset/font',
-                            expand: true
-                        },
-                        {
-                            dest: '<%=distDir%>/css',
-                            src: ['**/*'],
-                            cwd: '<%=baseDir%>/asset/css',
-                            expand: true
-                        },
-                        {
-                            dest: '<%=distDir%>/lib',
-                            src: ['angular-bootstrap/*.js'],
-                            cwd: '<%=baseDir%>/asset/lib',
                             expand: true
                         }
                     ]
@@ -114,8 +114,14 @@ module.exports = function(grunt) {
                         },
                         {
                             dest: '<%=distDir%>/css',
-                            src: ['*.*'],
+                            src: ['*.css' , '!*.min.css' , '!*.css.map'],
                             cwd: '<%=baseDir%>/asset/lib/bootstrap/css',
+                            expand: true
+                        },
+                        {
+                            dest: '<%=distDir%>/lib',
+                            src: ['angular-bootstrap/*.js'],
+                            cwd: '<%=baseDir%>/asset/lib',
                             expand: true
                         }
                     ]
@@ -138,21 +144,29 @@ module.exports = function(grunt) {
 					compile: false,
 					compress: true
 		        },
-		        src: ['<%= src.css %>'],
+		        src: ['<%=src.css%>'],
 		        dest: '<%=distDir%>/<%=pkg.name%>.min.css'
 			}
 		},
 		watch:{
 			js: {
-				files: ['<%= src.js %>'],
+				files: ['<%=src.js%>'],
 		        tasks: ['concat:default']
 			},
 			css: {
-				files: ['<%= src.css %>'], 
-				tasks: ['less']
+				files: ['<%=src.css%>'],
+				tasks: [/*'less'*/ 'copy:css']
 			},
+            img: {
+                files: ['<%=src.img%>'],
+                tasks: [/*'less'*/ 'copy:img']
+            },
+            font: {
+                files: ['<%=src.font%>'],
+                tasks: [/*'less'*/ 'copy:font']
+            },
 			tpl: {
-				files: ['<%= src.tpl %>', '<%= src.json%>'],
+				files: ['<%=src.tpl%>', '<%=src.json%>'],
 				tasks: ['html2js']
 			},
 			index: {
