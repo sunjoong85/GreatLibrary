@@ -114,17 +114,32 @@ module.exports = function(grunt) {
                         },
                         {
                             dest: '<%=distDir%>/css',
-                            src: ['*.css' , '!*.min.css' , '!*.css.map'],
+                            src: ['*.css' , '!*.min.css' , '*.css.map'],
                             cwd: '<%=baseDir%>/asset/lib/bootstrap/css',
                             expand: true
                         },
                         {
                             dest: '<%=distDir%>/lib',
-                            src: ['angular-bootstrap/*.js'],
+                            src: ['angular-bootstrap*/*.js'],
                             cwd: '<%=baseDir%>/asset/lib',
+                            expand: true
+                        },
+                        {
+                            dest: '<%=distDir%>/lib/bootstrap',
+                            src: ['boot*.js'],
+                            cwd: '<%=baseDir%>/asset/lib/bootstrap/js',
                             expand: true
                         }
                     ]
+                },
+                jquery : {
+                    files : [
+                        {
+                            dest: '<%=distDir%>/lib/jquery',
+                            src: ['*.*'],
+                            cwd: '<%=baseDir%>/asset/lib/jquery',
+                            expand: true
+                        }]
                 },
                 index: {
                     files: [

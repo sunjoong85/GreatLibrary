@@ -9,15 +9,17 @@
 
     <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!--<link rel="stylesheet" href="css/bootstrap.css.map">-->
+    <!--<link rel="stylesheet" href="css/style.css">-->
+
 
     <!-- CSS Implementing Plugins -->
 
     <!-- CSS Theme -->
-    <link rel="stylesheet" href="css/theme-colors/default.css">
+    <!--<link rel="stylesheet" href="css/theme-colors/default.css">-->
 
     <!-- CSS Customization -->
-    <link rel="stylesheet" href="css/custom.css">
+    <!--<link rel="stylesheet" href="css/custom.css">-->
 
 
 </head>
@@ -28,6 +30,9 @@
     <div ng-include=' "component/layout/header.tpl.html" '></div>
 </nav>
 
+<nav>
+    <div ng-include=' "component/layout/subheader.tpl.html" '></div>
+</nav>
 
 <!-- Add Sub Header-->
 
@@ -37,12 +42,15 @@
 </section>
 
 
+<script src="lib/jquery/jquery.js"></script>
 <script src="lib/angularjs/angular.custom.js"></script>
-<!--<script src="lib/angular-bootstrap/ui-bootstrap.js"></script>-->
-<!--<script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>-->
+<script src="lib/bootstrap/bootstrap.js"></script>
+<script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
 <script src="greatLibrary.templates.js"></script>
 <script src="greatLibrary.js"></script>
+
 
 
 </body>
